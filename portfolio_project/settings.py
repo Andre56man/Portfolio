@@ -7,8 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / '.env')
 # puis comme ci-dessus récupérer os.environ.get(...)
 
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-SECRET_KEY = 'replace-me-with-a-secure-key'
 
 DEBUG = True
 

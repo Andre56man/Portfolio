@@ -1,68 +1,46 @@
-# 🎨 Portfolio Django — Guide d’installation et d’exécution
+# Portfolio Django — Instructions
 
-Ce projet est un **portfolio minimal développé avec Django**.
-Il comprend :
+Ceci est un scaffold minimal d'un portfolio en Django. Il inclut :
 
-* 🧱 Un projet principal : `portfolio_project`
-* 💼 Une application : `portfolio_app` (avec un modèle `Project`)
-* 🖼️ Des templates HTML et des fichiers statiques prêts à être personnalisés
+- un projet `portfolio_project`
+- une app `portfolio_app` avec un modèle `Project`
+- templates et fichiers statiques
 
----
+Prérequis
+- Python 3.8+ installé
+- virtualenv (optionnel mais recommandé)
 
-## ⚙️ Prérequis
+Installation et exécution (Windows PowerShell)
 
-Avant de commencer, assurez-vous d’avoir installé :
-
-* **Python 3.8+**
-* **virtualenv** *(optionnel mais recommandé)*
-* **pip** (gestionnaire de paquets Python)
-
----
-
-## 🚀 Installation et exécution (Windows PowerShell)
-
-### 1️⃣ Créer et activer un environnement virtuel
+1. Créer et activer un environnement virtuel :
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
----
-
-### 2️⃣ Installer les dépendances
+2. Installer les dépendances :
 
 ```powershell
 pip install -r requirements.txt
 ```
 
----
+3. Appliquer les migrations et créer un superuser :
 
+```powershell
+python manage.py migrate
+python manage.py createsuperuser
+```
 
-
-### 4️⃣ Lancer le serveur de développement
+4. Lancer le serveur de développement :
 
 ```powershell
 python manage.py runserver
 ```
 
-🖥️ Ouvrez ensuite votre navigateur sur :
+5. Ouvrir http://127.0.0.1:8000/ pour voir la page d'accueil et http://127.0.0.1:8000/admin/ pour ajouter des projets.
 
-* Page d’accueil : [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
----
-
-## 🧩 Notes et prochaines étapes
-
-
-* 🖼️ **Médias :** ajoutez une gestion des fichiers médias (images, PDF, etc.)
-  pour permettre l’upload d’images de projets.
-* 🎨 **Personnalisation :** modifiez les templates (`templates/`) et le CSS (`static/`)
-  pour adapter le design à votre style personnel.
-* 🧠 **Optimisation :** pensez à configurer le déploiement (base de données, serveur, collectstatic, etc.) pour la production.
-
----
-
-🧾 **Auteur :** *Kodjo Koua Andre j-w*
-📅 **Dernière mise à jour :** Novembre 2025
-💡 *“Un portfolio bien conçu est la meilleure vitrine d’un développeur.”*
+Notes et prochaines étapes
+- Remplacer `SECRET_KEY` dans `portfolio_project/settings.py` par une valeur sûre pour la production.
+- Ajouter gestion des médias (images) si vous voulez uploader des images de projets.
+- Personnaliser templates et styles.

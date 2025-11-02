@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Kodjo Andre — Portfolio{% endblock %}</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{% url 'home' %}">Kodjo Andre</a>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#tech">Technologies</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="socials">
+        <a href="https://github.com/andre56man" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/kodjo-koua-andre-4a1a9618a/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© {{ now|date:"Y" }} Kodjo Andre ❤️. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // small JS: accordion + theme toggle
+    document.addEventListener('click', function (e) {
+      if (e.target.matches('.accordion-toggle') || e.target.closest('.accordion-toggle')) {
+        const toggle = e.target.closest('.accordion-toggle');
+        const item = toggle.closest('.accordion-item');
+        item.classList.toggle('open');
+      }
+    });
+
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>

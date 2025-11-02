@@ -1,0 +1,184 @@
+{% extends 'portfolio_app/base.html' %}
+{% block title %}Portfolio — Kodjo Andre{% endblock %}
+
+{% block content %}
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="preamble">Hello! I'm</div>
+      <h1 class="hero-name">Kodjo Andre</h1>
+      <p class="hero-sub">SOFTWARE ENGINEERING STUDENT</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+<section id="about" class="section about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="accordion">
+      <div class="accordion-item open">
+        <button class="accordion-toggle">Who am I ? <span class="chev">▾</span></button>
+        <div class="accordion-body">
+          <p>
+            I'm <strong>Kodjo Andre</strong>, a passionate <strong>Software Engineering student</strong> 
+            who loves exploring how science and technology can change the world.  
+            I’m deeply curious about innovation, systems, and everything that pushes human knowledge forward.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-toggle">What I love <span class="chev">▾</span></button>
+        <div class="accordion-body">
+          <p>
+            I have a strong interest in <strong>aeronautics</strong>, fascinated by how technology 
+            allows humans to conquer the skies.  
+            I’m also inspired by <strong>Artificial Intelligence</strong> — from automation to human–machine interaction — 
+            and how it can make systems smarter and more efficient.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-toggle">What I do <span class="chev">▾</span></button>
+        <div class="accordion-body">
+          <p>
+            I design and build <strong>modern, responsive web applications</strong> with a focus on 
+            clean code, usability, and performance.  
+            My projects blend creativity, logic, and simplicity — just like my approach to problem-solving.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-toggle">Interests <span class="chev">▾</span></button>
+        <div class="accordion-body">
+          <p>
+            Science, Technology, Aeronautics, Artificial Intelligence, and Space exploration — 
+            anything that connects imagination and engineering.  
+            I’m always learning, experimenting, and improving.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- TECHNOLOGIES -->
+  <section id="tech" class="section tech">
+    <div class="container">
+      <h2 class="section-title">Technologies</h2>
+      <div class="tech-grid">
+
+        <div class="tech-col">
+          <h3>Languages</h3>
+          <div class="chips">
+            <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="chip"><i class="fa-solid fa-mobile-screen-button"></i> Dart</span>
+            <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="chip"><i class="fa-brands fa-html5"></i> HTML</span>
+            <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+          </div>
+        </div>
+
+        <div class="tech-col">
+          <h3>Frameworks & Libraries</h3>
+          <div class="chips">
+            <span class="chip"><i class="fa-solid fa-fire-flame-curved"></i> Flask</span>
+            <span class="chip"><i class="fa-solid fa-leaf"></i> Django</span>
+            <span class="chip"><i class="fa-brands fa-flutter"></i> Flutter</span>
+          </div>
+        </div>
+
+        <div class="tech-col">
+          <h3>Tools & Platforms</h3>
+          <div class="chips">
+            <span class="chip"><i class="fa-brands fa-figma"></i> Figma</span>
+            <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span class="chip"><i class="fa-brands fa-github"></i> GitHub</span>
+            <span class="chip"><i class="fa-solid fa-microchip"></i> Arduino Uno</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-skills">
+        <h3>Soft Skills</h3>
+        <div class="chips vertical">
+          <span class="chip"><i class="fa-solid fa-language"></i> French</span>
+          <span class="chip"><i class="fa-solid fa-language"></i> English</span>
+          <span class="chip"><i class="fa-solid fa-plane"></i> Passionate about Aeronautics</span>
+          <span class="chip"><i class="fa-solid fa-people-group"></i> Teamwork</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-chips">
+        <a href="https://github.com/KodjoAndre/portfolio" target="_blank" class="chip">
+          🎨 Personal Portfolio — <span>Django + Tailwind</span>
+        </a>
+        <a href="https://github.com/KodjoAndre/weather-app" target="_blank" class="chip">
+          ☀️ Weather App — <span>React + OpenWeather API</span>
+        </a>
+        <a href="https://github.com/KodjoAndre/chatbot-ai" target="_blank" class="chip">
+          🤖 Chatbot AI — <span>Python + Django REST</span>
+        </a>
+        <a href="https://github.com/KodjoAndre/student-manager" target="_blank" class="chip">
+          🏫 Student Manager — <span>PHP + MySQL</span>
+        </a>
+        <a href="https://github.com/KodjoAndre/net-analyzer" target="_blank" class="chip">
+          🌐 Network Analyzer — <span>Python + Scapy</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="contact-email">Feel free to send me a message directly here 👇</p>
+
+    <form class="contact-form" method="post" action="{% url 'send_email' %}">
+      {% csrf_token %}
+      <div class="row">
+        <label>
+          <span>Name</span>
+          <input name="name" type="text" required>
+        </label>
+        <label>
+          <span>E-mail</span>
+          <input name="email" type="email" required>
+        </label>
+      </div>
+
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+
+      <div class="form-row">
+        <button type="submit" class="btn-send">
+          Send <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </form>
+
+    {% if messages %}
+      <div class="flash-messages">
+        {% for message in messages %}
+          <p class="msg">{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}
